@@ -9,21 +9,32 @@ const githubData = {
 }
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+  res.send('Server is ready')
+});
 
-app.get('/twitter', (req, res) => {
-    res.send('twitter account')
-})
+app.get('/api/jokes', (req, res) => {
+    const jokes = [
+      {
+        id:1,
+        title:'Joke 1',
+        content: 'This is a joke'
+      },
 
-app.get('/login', (req, res) => {
-    res.send('Login Page')
-})
+      {
+        id:2,
+        title:'Joke 1',
+        content: 'This is a joke'
+      },
 
-app.get('/github', (req, res) => {
-    res.json(githubData)
-})
+      {
+        id:3,
+        title:'Joke 1',
+        content: 'This is a joke'
+      }
+    ];
+    res.send(jokes);
+});
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`)
-})
+});
